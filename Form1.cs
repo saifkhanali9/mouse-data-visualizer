@@ -45,11 +45,25 @@ namespace mouseGradient
 
             // Read the file and display it line by line.  
             System.IO.StreamReader file =
-                new System.IO.StreamReader(@"C:\Saif\Office\Preprocessing\Tracking\1234_testfile.jsonl.json");
+                new System.IO.StreamReader(@"C:\Saif\Office\C#\Projects\MouseClick\file\1593092606943.json");
             while ((line = file.ReadLine()) != null)
             {
                 JObject data = JObject.Parse(line);
-                paintPicture(data["mouseX"].Value<Int32>(), data["mouseY"].Value<Int32>(), data["time"].Value<Int32>());
+                try
+                {
+                    if ((string)data["eventType"] == "mc")
+                    {
+                        using (Graphics g = Graphics.FromImage(pictureBox1.Image))
+                        {
+                            g.DrawRectangle(new Pen(Color.Green), (int)(data["mouseX"]), (int)data["mouseY"], 6, 6);
+                        }
+                    }
+                    paintPicture(data["mouseX"].Value<Int32>(), data["mouseY"].Value<Int32>(), data["time"].Value<Int32>());
+                }
+                catch
+                {
+
+                }
             }
 
             file.Close();
@@ -107,11 +121,19 @@ namespace mouseGradient
                     vy = (yDiff * 1.0) / timeDiff;
                     v = Math.Sqrt((vx * vx) + (vy * vy));
                     vMag = Convert.ToInt32(v);
-                    double r = v/2;
-                    Color color = interpolate(new List<Color>() { Color.Black, Color.Black, Color.FromArgb(0x330000), Color.FromArgb(0x660000), Color.FromArgb(0x660000), Color.FromArgb(0x800000), Color.FromArgb(0x8B0000), Color.FromArgb(0xCD0000), Color.FromArgb(0xEE0000), Color.FromArgb(0xFF0000), Color.FromArgb(0xFE0000), Color.FromArgb(0xFF2B2B),
+                    double r = v/11;
+                    if (v == 0)
+                    {
+                        SolidBrush redBrush = new SolidBrush(Color.Blue);
+                        g.FillEllipse(redBrush, x1, y1, 4, 4);
+                    }
+                    else
+                    {
+                        Color color = interpolate(new List<Color>() { Color.Black, Color.Black, Color.FromArgb(0x330000), Color.FromArgb(0x660000), Color.FromArgb(0x660000), Color.FromArgb(0x800000), Color.FromArgb(0x8B0000), Color.FromArgb(0xCD0000), Color.FromArgb(0xEE0000), Color.FromArgb(0xFF0000), Color.FromArgb(0xFE0000), Color.FromArgb(0xFF2B2B),
                         Color.FromArgb(0xFF3030), Color.FromArgb(0xFF3333), Color.FromArgb(0xFF4040), Color.FromArgb(0xFF6666), Color.FromArgb(0xFF6A6A), Color.FromArgb(0xFF7777), Color.FromArgb(0xFF9090), Color.FromArgb(0xFF9393), Color.FromArgb(0xFF9999), Color.FromArgb(0xFFA9A9), Color.FromArgb(0xFFAAAA), Color.FromArgb(0xFFAEAE), Color.FromArgb(0xFFBBBB), Color.FromArgb(0xFFC1C1), Color.FromArgb(0xFFCCCC), Color.FromArgb(0xFFD5D5), Color.FromArgb(0xFFDDDD)}, r);
-                    g.DrawLine(new Pen(color, 1), lastx1, lasty1, x1, y1);
-                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                        g.DrawLine(new Pen(color, 1), lastx1, lasty1, x1, y1);
+                        g.SmoothingMode = SmoothingMode.AntiAlias;
+                    }
                     //this is to give the drawing a more smoother, less sharper look
                 }
                 pictureBox1.Invalidate();//refreshes the picturebox
