@@ -1,0 +1,13 @@
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.csprojAssemblyReference.cache
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.Form1.resources
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.Properties.Resources.resources
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.csproj.GenerateResource.cache
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.csproj.CoreCompileInputs.cache
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\bin\Debug\mouseGradient.exe.config
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\bin\Debug\mouseGradient.exe
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\bin\Debug\mouseGradient.pdb
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.exe
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.pdb
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\bin\Debug\Newtonsoft.Json.dll
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\bin\Debug\Newtonsoft.Json.xml
+C:\Saif\Office\C#\Projects\MouseGradient\mouseGradient\obj\Debug\mouseGradient.csproj.CopyComplete
