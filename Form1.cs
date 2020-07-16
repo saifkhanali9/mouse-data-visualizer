@@ -38,6 +38,7 @@ namespace mouseGradient
             InitializeComponent();
             mainFunction();
         }
+
         private void mainFunction()
         {
             System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
