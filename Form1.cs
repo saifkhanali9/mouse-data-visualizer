@@ -47,7 +47,7 @@ namespace mouseGradient
 
             // Read the file and display it line by line.  
             System.IO.StreamReader file =
-                new System.IO.StreamReader(@"C:\Saif\Office\Preprocessing\Tracking\files\interpolated\twopage_snakes.jsonl");
+                new System.IO.StreamReader(@"C:\Users\Saif Ali Khan\Desktop\test.json");
             while ((line = file.ReadLine()) != null)
             {
                 JObject data = JObject.Parse(line);
